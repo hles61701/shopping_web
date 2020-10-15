@@ -1,0 +1,121 @@
+<%- include('../parts/html-head') %>
+<%- include('../parts/navbar') %>
+
+
+
+<div class="container">
+    <div id="infobar" class="alert alert-success" role="alert" style="display:none"></div>
+    
+    <div class="" name="form1")>
+        <% for(let i of rows){ %>
+        <div class="main_menu" style="display: inline-block; width: 210px; text-align: center;">
+            <div class="box">
+                <img src="<%= i.img_show %>" width="150px" height="150px">
+                <br>
+                <%= i.name %><br>
+                <strong>$<%= i.price %></strong>
+                <br>
+                <button class="btn btn-danger my-cart-btn" data-id="<%= i.id %>" data-name="<%= i.name %>" data-summary="summary 1"
+                    data-price="<%= i.price %>" data-quantity="1" onclick="addCart(event)" >加入購物車</button>
+                    <a href="/product/<%= i.id %>" class="btn btn-info">產品內容</a>
+            </div>
+        </div>
+
+        <% } %>
+    </div>
+</div>
+<div class="container" style="padding: 20px; position: absolute; top:90%;left:40%;">
+
+
+    <nav aria-label="Page navigation example" style="clear: both;text-align:center;">
+        <ul class="pagination">
+            <li class="page-item <%= page==1 ? 'disabled' : '' %>">
+                <a class="page-link" href="/onearath/<%= page-1 %>">Previous</a>
+            </li>
+            <% for(let i=1; i<=totalPages; i++){ %>
+            <li class="page-item <%= i==page ? 'active' : '' %>">
+                <a class="page-link" href="/onearath/<%= i %>"><%= i %></a>
+            </li>
+            <% } %>
+            <li class="page-item <%= page==totalPages ? 'disabled' : '' %>">
+                <a class="page-link" href="/onearath/<%= page+1 %>">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<!-- <div class="sidebar-widget woocommerce widget_price_filter">
+    <h3 class="sidebar-title">由價格篩選</h3>
+    <form method="get" action="https://www.g-goods.com.tw/product-category/headset/">
+        <div class="price_slider_wrapper">
+            <div class="price_slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" style="">
+                <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span
+                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span
+                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span>
+            </div>
+            <div class="price_slider_amount">
+                <input type="text" id="min_price" name="min_price" value="" data-min="790" placeholder="最低價格"
+                    style="display: none;">
+                <input type="text" id="max_price" name="max_price" value="" data-max="129000" placeholder="最高價格"
+                    style="display: none;">
+                <button type="submit" class="button">篩選</button>
+                <div class="price_label" style="">
+                    價格： <span class="from">NT$790</span> — <span class="to">NT$129,000</span>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+<%- include('../parts/scripts') %>
+<script>
+const infobar = $('#infobar');
+function addCart(event) {
+        const b = $(event.currentTarget);
+        const product_name= b.attr('data-name');
+        const product_id = b.attr('data-id');
+
+        console.log(product_name);
+        console.log(product_id);
+        console.log(b.attr('data-price'));
+
+        $.post('/add', {product_id,product_name}, function (data) {
+            console.log(data);
+            if (data.success) {
+                infobar.text('新增成功');
+                infobar.removeClass('alert-danger').addClass('alert-success');
+                setTimeout(function () {
+                    // location.href = '/';
+                }, 3000);
+            }
+            else {
+                infobar.text(data.error || '新增失敗');
+                infobar.removeClass('alert-success').addClass('alert-danger');
+                setTimeout(function () {
+                    infobar.slideUp();
+                }, 3000);
+            }
+            infobar.slideDown();
+
+        }, 'json');
+
+        return false;
+       
+    };
+
+</script>
+<!-- <style>
+        span .main_menu {
+            float: left;
+            border: 1px thick black;
+            width: 400px;
+            height: 600px;
+        }
+    </style> -->
+
+
+<%- include('../parts/html-foot') %>

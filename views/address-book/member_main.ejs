@@ -1,0 +1,104 @@
+<style>
+    .form-group {
+        width: 500px;
+        text-align: center;
+        
+    };
+  
+    
+</style>
+<%- include('../parts/html-head') %>
+<%- include('../parts/navbar') %>
+
+
+
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 50px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><strong>會員資料</strong></li>
+        </ol>
+    </nav>
+    
+    <form class="container">
+        <% for(let i of rows){ %>
+        <div class="form-group row">
+            <label for="account" class="col-lg-2 col-form-label">帳號:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="account" placeholder="<%= i.account %>"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-lg-2 col-form-label">密碼:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="password" value="<%= i.password %>"
+                    >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-lg-2 col-form-label">姓名:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="name" value="<%= i.name %>"
+                    >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="gender" class="col-lg-2 col-form-label">性別:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="gender" value="<%= i.gender %>"
+                    readonly>
+            </div>
+            <!-- <div class="form-group">
+                <label for="name">性別:</label>
+                <input type="radio"  id="gender" name="gender" value="<%= i.gender %>" >男
+                <input type="radio"  id="gender" name="gender" value="<%= i.gender %>">女
+                
+
+            </div> -->
+        </div>
+        <div class="form-group row">
+            <label for="mobile" class="col-lg-2 col-form-label">電話:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="mobile" value="<%= i.mobile %>"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="birthday" class="col-lg-2 col-form-label">生日:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="birthday" value="<%= i.birthday %>"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-lg-2 col-form-label">Email:</label>
+            <div class="col-lg-10">
+                <input type="text" readonly class="form-control-plaintext" id="email" value="<%= i.email %>"
+                    readonly>
+            </div>
+        </div>
+        <% } %>
+        <div style="text-align: right; margin-top:50px;">
+            <a href="/address-book/memberedit">
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                    <path fill-rule="evenodd"
+                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                </svg>
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+    <%- include('../parts/scripts') %>
+    <script>
+
+
+    </script>
+
+
+    <%- include('../parts/html-foot') %>

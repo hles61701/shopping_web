@@ -1,0 +1,120 @@
+<style>
+    .form-group {
+        width: 500px;
+        text-align: center;
+        
+    };
+  
+    
+</style>
+<%- include('../parts/html-head') %>
+<%- include('../parts/navbar') %>
+
+
+<div id="infobar" class="alert alert-success" role="alert" style="display:none"></div>
+
+<div class="container">    
+    <nav aria-label="breadcrumb" style="margin-top: 50px; ">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page" ><strong>資料修改</strong></li>
+        </ol>
+    </nav>
+    
+    <form class="container" method="POST" name='form1' onsubmit="return formCheck()">
+        <% for(let i of rows){ %>
+        <div class="form-group row">
+            <label for="account" class="col-lg-2 col-form-label">帳號:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="account" placeholder="<%= i.account %>"
+                    readonly>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="password" class="col-lg-2 col-form-label">密碼:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="password" name="password" value="<%= i.password %>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-lg-2 col-form-label">姓名:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="name" name="name" value="<%= i.name %>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="gender" class="col-lg-2 col-form-label">性別:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="gender" name="gender" value="<%= i.gender %>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="mobile" class="col-lg-2 col-form-label">電話:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="mobile" name="mobile" value="<%= i.mobile %>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="birthday" class="col-lg-2 col-form-label">生日:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="birthday" name="birthday" value="<%= i.birthday %>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-lg-2 col-form-label">Email:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control-plaintext" id="email" name="email" value="<%= i.email %>">
+            </div>
+        </div>
+        <% } %>
+        <div style="text-align: right;">
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+
+    </form>
+
+</div>
+    <%- include('../parts/scripts') %>
+    <script>
+        // const email_pattern = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        const email = $('#email');
+        const infobar = $('#infobar');
+
+
+        function formCheck() {
+            //     if (!email_pattern.test(email.val())) {
+            //         alert('Email 格式不符');
+            //         return false;
+
+            //     };
+
+            // TODO: 檢查欄位的格式
+            $.post('/address-book/memberedit', $(document.form1).serialize(), function (output) {
+                // console.log('add', output.success);
+                output.success = true;
+                console.log('add', output.success);
+                if (output.success) {
+                    infobar.text('新增成功');
+                    infobar.removeClass('alert-danger').addClass('alert-success');
+                    setTimeout(function () {
+                        location.href = '/';
+                    }, 3000);
+                }
+                else {
+                    infobar.text('新增失敗');
+                    infobar.removeClass('alert-success').addClass('alert-danger');
+                    setTimeout(function () {
+                        infobar.slideUp();
+                    }, 3000);
+                }
+                infobar.slideDown();
+
+            }, 'json');
+
+            return false;
+
+        };
+
+    </script>
+
+
+    <%- include('../parts/html-foot') %>

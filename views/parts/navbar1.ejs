@@ -1,0 +1,105 @@
+<style>
+    .navbar .navbar-nav .nav-item.active {
+        background-color: #C4E1FF;
+        border-radius: 15px;
+    }
+</style>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!-- <a class="navbar-brand" href="#">耳機</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item <%= pageName == "home" ? 'active' : '' %>">
+                    <a class="nav-link" href="/">
+                        首頁
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        耳罩式
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/aroundearsony/">Sony</a>
+                        <a class="dropdown-item" href="/aroundearath/">Audio Technica</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        耳道式
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/onearsony/">Sony</a>
+                        <a class="dropdown-item" href="/onearath/">Audio Technica</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        耳塞式
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/inearsony/">Sony</a>
+                        <a class="dropdown-item" href="/inearath/">Audio Technica</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                    <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        真無線
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/try-post-form">try-post-form</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li> -->
+                    <!-- <li class="nav-item <%= pageName == "address-book-list" ? 'active' : '' %>">
+                    <a class="nav-link" href="/address-book/list">Address-Book List</a>
+                </li>
+                <li class="nav-item <%= pageName == "address-book-add" ? 'active' : '' %>">
+                    <a class="nav-link" href="/address-book/add">Address-Book Add</a>
+                </li> -->
+
+            </ul>
+            <ul class="navbar-nav">
+                <% if(sess.adminUser && sess.adminUser.account){ %>
+                <li class="nav-item">
+                    <a class="nav-link" href=""><%= sess.adminUser.nickname %></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/address-book/logout">登出</a>
+                </li>
+
+                <% }else{ %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/address-book/login">登入</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/address-book/registe">註冊</a>
+                </li>
+                <% } %>
+
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

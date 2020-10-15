@@ -1,0 +1,133 @@
+<%- include('../parts/html-head') %>
+<%- include('../parts/navbar') %>
+
+
+<div class="container">
+    <div id="infobar" class="alert alert-success" role="alert" style="display:none"></div>
+   
+    <!-- <%= JSON.stringify(rows) %> -->
+    <% for(let i of rows){ %>
+        <img src="<%= i.img_show %>" width="500px" height="500px" style="float: left;">
+        <div class="container" style="text-align: center;">
+            <h3 style="padding-top: 100px;"><%= i.name %></h3>
+            <h3 style="padding-top: 100px;">售價:$<%= i.price %></h3>
+            <button class="btn btn-danger my-cart-btn" data-id="<%= i.id %>" data-name="<%= i.name %>" data-summary="summary 1"
+                data-price="<%= i.price %>" data-quantity="1" onclick="addCart(event)" >加入購物車</button>
+
+        </div>
+    <div class="row" style="clear: left;">
+        <div class="col">
+            <table class="table table-striped">
+                <thead>
+                    <!-- <tr>
+                       
+                        <th scope="col">#</th>
+                        <th scope="col">姓名</th>
+                        <th scope="col">email</th>
+                        <th scope="col">生日</th>
+                        <th scope="col">手機</th>
+                       
+                        
+                    </tr> -->
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: right;">項目</td>
+                        <td style="text-align: left;"><%= i.id %></td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">產品名稱</td>
+                        <td style="text-align: left;"><%= i.name %></td>
+                    </tr>
+                   
+                    <tr>
+                        <td style="text-align: right;">產品價錢</td>
+                        <td style="text-align: left;"><%= i.price %></td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">產品品牌</td>
+                        <td style="text-align: left;"><%= i.brand %></td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">產品種類</td>
+                        <td style="text-align: left;"><%= i.headphonetype %></td>
+
+                    </tr> 
+                    <tr>
+                        <td style="text-align: right;">驅動單體</td>
+                        <td style="text-align: left;"><%= i.驅動單體 %></td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">頻率響應</td>
+                        <td style="text-align: left;"><%= i.頻率響應 %></td>
+
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">重量</td>
+                        <td style="text-align: left;"><%= i.重量 %></td>
+
+                    </tr> 
+                   
+                    <!-- <tr>
+                        
+                        <td><%= i.id %></td>
+                        <td><%= i.name %></td>
+                        <td><%= i.price %></td>
+                        <td><%= i.brand %></td>
+                        <td><%= i.headphonetype %></td>
+                       
+                        
+                    </tr> -->
+
+                    <% } %>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
+
+<%- include('../parts/scripts') %>
+<script>
+const infobar = $('#infobar');
+function addCart(event) {
+        const b = $(event.currentTarget);
+        const product_name= b.attr('data-name');
+        const product_id = b.attr('data-id');
+
+        console.log(product_name);
+        console.log(product_id);
+        console.log(b.attr('data-price'));
+
+        $.post('/add', {product_id,product_name}, function (data) {
+            console.log(data);
+            if (data.success) {
+                infobar.text('新增成功');
+                infobar.removeClass('alert-danger').addClass('alert-success');
+                setTimeout(function () {
+                    // location.href = '/';
+                }, 3000);
+            }
+            else {
+                infobar.text(data.error || '新增失敗');
+                infobar.removeClass('alert-success').addClass('alert-danger');
+                setTimeout(function () {
+                    infobar.slideUp();
+                }, 3000);
+            }
+            infobar.slideDown();
+
+        }, 'json');
+
+        return false;
+       
+    };
+</script>
+<%- include('../parts/html-foot') %>

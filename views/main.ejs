@@ -1,0 +1,467 @@
+<%- include('parts/html-head') %>
+<%- include('parts/navbar') %>
+
+
+<!-- 
+<div class="container">
+    <h2>
+        <i class="fas fa-wheelchair"></i>
+    </h2>
+    <%= name %> 
+</div> -->
+
+<!-- 圖片輪播 -->
+<div class="container-new-item">
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="500">
+                <img src="/images/001-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="500">
+                <img src="/images/002-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="500">
+                <img src="/images/003-1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="500">
+                <img src="/images/005-1.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<hr size=10 width="80%">
+
+
+
+<!-- 最新商品 -->
+<div class="container">
+    <h3 style="text-align:center;">最新商品</h3>
+    <div class="container">
+        <div class="row blog">
+            <div class="col-md-12">
+                <div id="blogCarousel1" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators" id="blogCarousel">
+                        <li data-target="#blogCarousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel1" data-slide-to="1"></li>
+
+
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://d.ecimg.tw/items/DYAQ9MA9009EQIC/000001_1585533873.jpg"
+                                            alt="Image" style="max-width:80%;"><br>
+                                        SONY 無線藍牙降噪Hi-Res耳罩式耳機 WH-1000XM3 <br><strong>$8910</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://e.ecimg.tw/items/DCAY7SA9009EOZ3/000001_1536743902.jpg"
+                                            alt="Image" style="max-width:80%;"><br>
+                                        SONY IER-M7 搭載四顆平衡電樞單體 入耳式監聽耳機 <br><strong>$19900</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/6/W1000Z-01.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-W1000Z 木製機殼耳罩式耳機 <br><strong>$25000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/thumbnails/300/300/detailed/2/ANC100-01.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-ANC100BT 無線抗噪耳機 <br><strong>$4000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="carousel-item text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="
+                                        https://e.ecimg.tw/items/DCAY7TA90096QRM/000001_1530762122.jpg
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        SONY MDR-7506 錄音監聽耳機 頭戴式耳機 <br><strong>$4300</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://d.ecimg.tw/items/DYAQ9DA900AEPHB/000001_1589167239.jpg
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        SONY WH-H910N 無線降噪藍牙耳機 35H續航力 - 紅色 <br><strong>$8091</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="
+                                        https://f.ecimg.tw/items/DGBT8BA9005YYC4/000001_1478414164.jpg
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        Sony 立體聲耳罩式耳機 MDR-ZX110 <br><strong>$750</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="
+                                        https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/6/W5000-01.png
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        ATH-W5000 動圈式耳機 <br><strong>$39800</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a>
+
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<hr size=10 width="80%">
+
+<!-- 暢銷商品 -->
+<div class="container">
+    <h3 style="text-align:center;">暢銷商品</h3>
+    <div class="container">
+        <div class="row blog">
+            <div class="col-md-12">
+                <div id="blogCarousel2" class="carousel slide" data-ride="carousel">
+
+                    <ol class="carousel-indicators">
+
+                        <li data-target="#blogCarousel2" data-slide-to="0" class="active"></li>
+                        <li data-target="#blogCarousel2" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/detailed/7/ADX5000-01_qlgs-ae.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-ADX5000 Air Dynamic 開放式耳機 <br><strong>$75000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/detailed/7/L5000-01.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-L5000 真皮包覆木質機殼密閉式耳機 <br><strong>$138500</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/detailed/2/ANC100-01.png"                                        " alt="Image" style="max-width:80%;"><br>
+                                        ATH-ANC100BT 無線抗噪耳機 <br><strong>$4000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="
+                                        https://www.audio-technica.com.tw/images/detailed/7/AWAS-01_52wf-x2.png
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        ATH-AWAS 耳罩式耳機<br><strong>$38900</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                        <div class="carousel-item text-center">
+                            <div class="row">
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="
+                                        https://e.ecimg.tw/items/DCAY7SA9009EOZ3/000001_1536743902.jpg" alt="Image"
+                                            style="max-width:80%;"><br>
+                                        SONY IER-M7 搭載四顆平衡電樞單體 入耳式監聽耳機 <br><strong>$19900</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/6/EM7X-01.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-EM7x 耳掛式耳機 <br><strong>$2500</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/thumbnails/500/500/detailed/5/ATH-EW9-01_uu2f-3u.png" alt="Image" style="max-width:80%;"><br>
+                                        ATH-EW9 耳掛式耳機 <br><strong>$7000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a></div>
+                                <div class="col-md-3 text-center">
+                                    <a href="#">
+                                        <img src="https://www.audio-technica.com.tw/images/detailed/2/ANC100-01.png
+                                        " alt="Image" style="max-width:80%;"><br>
+                                        ATH-ANC100BT 無線抗噪耳機 <br><strong>$4000</strong><br>
+                                        <!-- <button class="btn btn-danger my-cart-btn " data-id="1" data-image="圖片.png"
+                                            data-name="product 1" data-price="10" data-quantity="1"
+                                            data-summary="summary 1"><i class="fas fa-cart-arrow-down"></i></button> -->
+                                    </a>
+
+                                </div>
+                            </div>
+                            <!--.row-->
+                        </div>
+                        <!--.item-->
+
+                    </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- 
+<div class="container-new-item" style="height:260 ; background-color: gray;">
+    <h3 style="text-align: center;">最新商品</h3>
+    <div class="col-md-3 text-center">
+        <img height="150px" src="圖片.png" width="150px" /><br />
+        產品名稱ABC <strong>產品金額$NT100</strong><br />
+        <button class="btn btn-danger my-cart-btn" data-id="1" data-image="圖片.png" data-name="product 1" data-price="10"
+            data-quantity="1" data-summary="summary 1">加入購物車</button>
+    </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="fixed-bottom">
+        <a href="https://www.facebook.com/" class="btn btn-primary"><i class="fab fa-2x fa-facebook-square"></i></a>
+        <a href="https://www.youtube.com/" class="btn btn-primary"><i class="fab fa-2x fa-youtube-square"></i></a>
+        <a href="https://twitter.com/explore" class="btn btn-primary"><i class="fab fa-2x fa-twitter-square"></i></a>
+    </div> -->
+<br>
+<hr size=10 width="80%">
+<h3 style="text-align:center;">推薦影片</h3>
+<div style="text-align: center;">
+
+
+
+    <iframe width="400" height="250" src="https://www.youtube.com/embed/hACmRLXL4yM" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="400" height="250" src="https://www.youtube.com/embed/KoON3W8kp20" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="400" height="250" src="https://www.youtube.com/embed/OCFl1juu5_c" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</div>
+
+
+
+
+
+
+
+<br style="clear: left;">
+<hr size=10 width="80%">
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Content -->
+                <h5 class="font-weight-bold text-uppercase mb-4">我們的位置</h5>
+                <figure>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0051090185034!2d121.54120951500624!3d25.033900683972437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xec12a62666a81e3d!2zMTA25Y-w5YyX5biC5aSn5a6J5Y2A5b6p6IiI5Y2X6Lev5LiA5q61Mzkw6Jmf!5e0!3m2!1szh-TW!2stw!4v1594282702255!5m2!1szh-TW!2stw"
+                        width="250" height="200" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+
+                </figure>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mb-4">關於我們</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p>
+                            <a href="#!">品牌介紹</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="#!">常見Q&A</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="#!">購買方法</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <a href="#!">退換貨政策</a>
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+                <!-- Contact details -->
+                <h5 class="font-weight-bold text-uppercase mb-4">聯繫我們</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p>
+                            <i class="fas fa-home mr-3"></i>台北市大安區復興南路一段390號2樓</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> iii123@example.com</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i>(02)2266-0857</p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fas fa-print mr-3"></i>(02)2266-0887</p>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+                <!-- Social buttons -->
+                <h5 class="font-weight-bold text-uppercase mb-4">Follow</h5>
+
+                <!-- Facebook -->
+                <a type="button" class="btn-floating btn-fb">
+                    <i class="fab fa-2x fa-facebook-f"></i>
+                </a>
+                <!-- Twitter -->
+                <a type="button" class="btn-floating btn-tw">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </a>
+                <!-- Google +-->
+                <a type="button" class="btn-floating btn-gplus">
+                    <i class="fab fa-2x fa-google-plus-g"></i>
+                </a>
+                <!-- Dribbble -->
+                <!-- <a type="button" class="btn-floating btn-dribbble">
+                    <i class="fab fa-2x fa-dribbble"></i>
+                </a> -->
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://www.iii.org.tw/"> Institute for Information Industry</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+<%- include('parts/scripts') %>
+<%- include('parts/html-foot') %>
