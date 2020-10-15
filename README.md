@@ -11,6 +11,7 @@ III first project
 
 
 ## 商品分頁 
+可以直接加入購物車或是看商品詳細資訊
 ![image](https://github.com/hles61701/shopping_web/blob/main/images/readme/demo004.png)
 ## 商品詳細內容
 ![image](https://github.com/hles61701/shopping_web/blob/main/images/readme/demo005.png)
